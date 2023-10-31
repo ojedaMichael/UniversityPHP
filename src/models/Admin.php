@@ -11,7 +11,7 @@ class Admin{
     } 
 
     public static function ClasesRead(){
-        $res = DB::query("select c.ID_Clase, c.NombreClase, u.Nombre, u.Apellido, m.ID_Maestro, u.CorreoElectronico, mc.ID_Maestro_Clase from clases c inner join maestro_clase mc on c.ID_Clase = mc.ID_Clase inner join maestros m on m.ID_Maestro = mc.ID_Maestro inner join usuarios u on m.ID_Usuario = u.ID_Usuario where c.NombreClase <> 'inactivo' ;");
+        $res = DB::query("select c.ID_Clase, c.NombreClase,u.ID_Usuario, u.Nombre, u.Apellido, m.ID_Maestro, u.CorreoElectronico, mc.ID_Maestro_Clase from clases c inner join maestro_clase mc on c.ID_Clase = mc.ID_Clase inner join maestros m on m.ID_Maestro = mc.ID_Maestro inner join usuarios u on m.ID_Usuario = u.ID_Usuario where c.NombreClase <> 'inactivo' and u.Rol <> 'inactivo';");
         $dataClases = $res->fetchAll(PDO::FETCH_ASSOC);
 
         return $dataClases;
@@ -24,7 +24,26 @@ class Admin{
         return $dataUsuarios;
     }
 
-    
+    public static function All () {
+        session_start();
+
+        $res = DB::query("select a.ID_Alumno, u.ID_Usuario, u.Nombre, u.Apellido, u.CorreoElectronico, u.Rol from alumnos a inner join usuarios u on u.ID_Usuario = a.ID_Usuario where Rol = 'alumno' ;");
+        $dataAlumnos = $res->fetchAll(PDO::FETCH_ASSOC);
+        $_SESSION["alumnos"] = $dataAlumnos;
+
+        $res1 = DB::query("select c.ID_Clase, c.NombreClase,u.ID_Usuario, u.Nombre, u.Apellido, m.ID_Maestro, u.CorreoElectronico, mc.ID_Maestro_Clase from clases c inner join maestro_clase mc on c.ID_Clase = mc.ID_Clase inner join maestros m on m.ID_Maestro = mc.ID_Maestro inner join usuarios u on m.ID_Usuario = u.ID_Usuario where c.NombreClase <> 'inactivo' ;");
+        $dataClases = $res->fetchAll(PDO::FETCH_ASSOC);
+        $_SESSION["maestros"] = $dataClases;
+        $_SESSION["clases"] = $dataClases;
+
+        $res2 = DB::query("select * from usuarios;");
+        $dataUsuarios = $res->fetchAll(PDO::FETCH_ASSOC);
+        $_SESSION["usuarios"] = $dataUsuarios;
+
+        if ($res && $res1 && $res2) {
+            return true;
+        }
+    }
     public static function Delete($id) {
          
         $res = DB::query("UPDATE usuarios SET Rol = 'inactivo' WHERE ID_Usuario = '$id';");
@@ -38,6 +57,16 @@ class Admin{
     public static function DeleteClase($id) {
          
         $res = DB::query("UPDATE clases SET NombreClase = 'inactivo' WHERE ID_Clase = '$id';");
+
+        if ($res) {
+            return true;
+        }
+
+    }
+
+    public static function DeleteMaestro($id) {
+         
+        $res = DB::query("UPDATE usuarios SET Rol = 'inactivo' WHERE ID_Usuario = '$id';");
 
         if ($res) {
             return true;
@@ -83,7 +112,7 @@ class Admin{
         }
     }
 
-    public static function EditMaestro($data) {
+    public static function EditTeacher($data) {
 
         $id = $data["id"];
         $idMaestroClase = $data["idMaestroClase"];
@@ -130,8 +159,10 @@ class Admin{
         $nombre = $data["nombre"];
         $apellido = $data["apellido"];
         $correo = $data["correo"];
+        $contrasena = $data["contrasena"];
+        $hash = password_hash($contrasena, PASSWORD_DEFAULT);
 
-        $res = DB::query("insert into usuarios(Nombre, Apellido, CorreoElectronico, Rol) values ('$nombre','$apellido', '$correo', 'alumno');");
+        $res = DB::query("insert into usuarios(Nombre, Apellido, Password, CorreoElectronico, Rol) values ('$nombre','$apellido', '$hash', '$correo', 'alumno');");
 
         if ($res) {
             return true;

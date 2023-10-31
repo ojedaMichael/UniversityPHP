@@ -99,18 +99,18 @@ $dataMaestros = $_SESSION["maestros"];
                                     <tr>
                                         <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900"><?= $ID_Maestro ?></td>
                                         <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?=$Nombre ?></td>
-                                        <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?= $Nombre ?></td>
+                                        <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?= $Apellido ?></td>
                                         <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?= $CorreoElectronico ?></td>
                                         <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?= $NombreClase ?></td>
                                         <td class="whitespace-nowrap px-4 py-2">
                                             <div class="flex">
-                                                <form action="/destroyClase" method="post">
-                                                    <button type="submit" name="clase_id" value="<?=$ID_Clase ?> " class="inline-block rounded  px-4 text-red-600 hover:text-red-300 text-center">
+                                                <form action="/destroyMaestro" method="post">
+                                                    <button type="submit" name="clase_id" value="<?=$ID_Usuario ?> " class="inline-block rounded  px-4 text-red-600 hover:text-red-300 text-center">
                                                         <span class="material-symbols-outlined">delete</span>
                                                     </button>
                                                 </form>
 
-                                                <a href="/adminMaestroEditView?id=<?=$ID_Maestro_clase?>" class="inline-block rounded w-10 px-4 text-sky-600 hover:text-sky-300 text-center">
+                                                <a href="/adminMaestroEditView?id=<?=$ID_Maestro?>" class="inline-block rounded w-10 px-4 text-sky-600 hover:text-sky-300 text-center">
                                                     <span class="material-symbols-outlined ">edit</span>
                                                 </a>
                                             </div>

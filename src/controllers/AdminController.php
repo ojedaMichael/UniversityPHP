@@ -15,7 +15,11 @@ class AdminController{
         require_once($_SERVER["DOCUMENT_ROOT"] . "/src/views/Admin/AdminMaestros/AdminMaestrosRead.php");
     }
 
+
     public function AdminDashboard() {
+
+        $allData = Admin::All();
+
         require_once($_SERVER["DOCUMENT_ROOT"] . "/src/views/Admin/AdminDashboard.php");
     }
 
@@ -50,6 +54,15 @@ class AdminController{
         }
     }
 
+    public function DestroyMaestro($id) {
+
+       $deleted = Admin::DeleteMaestro($id);
+
+        if ($deleted) {
+            header("location: /adminMaestrosRead");
+        }
+    }
+
     public function EditAlumno($request) {
 
         $edited = Admin::Edit($request);
@@ -70,7 +83,7 @@ class AdminController{
 
     public function EditMaestro($request) {
 
-        $edited = Admin::EditMaestro($request);
+        $edited = Admin::EditTeacher($request);
 
         if ($edited) {
             header("location: /adminMaestrosRead");

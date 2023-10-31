@@ -3,6 +3,8 @@
 session_start();
 $dataAlumnos = $_SESSION["claseRead"];
 extract($dataAlumnos[0]);
+$dataPersonales = $_SESSION["user"];
+
 
 ?>
 
@@ -25,11 +27,11 @@ extract($dataAlumnos[0]);
                 <h1 class="text-[#babcc9]">universidad</h1>
             </div>
             <div class=" border-b border-gray-500">
-                <h1 class="text-[#babcc9] m-2 text-lg">Admin</h1>
-                <h2 class="text-[#babcc9] m-2 text-sm">Administrador</h2>
+                <h1 class="text-[#babcc9] m-2 text-lg">Maestro</h1>
+                <h2 class="text-[#babcc9] m-2 text-sm"><?=$dataPersonales[0]["Nombre"]?> <?=$dataPersonales[0]["Apellido"]?></h2>
             </div>
             <div class="flex justify-center content-center">
-                <h1 class="text-[#babcc9] text-[10px] font-bold mt-4">MENU ADMINISTRACION</h1>
+                <h1 class="text-[#babcc9] text-[10px] font-bold mt-4">MENU DE MAESTRO</h1>
             </div>
             <div class="">
                 <div class="flex justify-center content-center">
@@ -43,7 +45,7 @@ extract($dataAlumnos[0]);
                 <a href="/maestroDashboard" class="text-slate-400 text-sm font-semibold ml-6">Home</a>
                 </div>
                 <div>
-                    <h2 class="text-slate-400 text-sm font-semibold mr-3">Administrador</h2>
+                    <h2 class="text-slate-400 text-sm font-semibold mr-3"><?=$dataPersonales[0]["Nombre"]?> <?=$dataPersonales[0]["Apellido"]?></h2>
                 </div>
             </div>
             <div class="bg-slate-300 h-screen pt-4">

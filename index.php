@@ -147,6 +147,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ) {
             $controllerAdmin->DestroyClase($_POST["clase_id"]);
             break;
 
+        case "/destroyMaestro":
+            $controllerAdmin->DestroyMaestro($_POST["clase_id"]);
+            break;
+
         case "/destroyInscripcion":
             $controllerAlumno->DestroyInscripcion($_POST);
             break;

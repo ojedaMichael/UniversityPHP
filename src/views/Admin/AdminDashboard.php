@@ -50,7 +50,7 @@
             <div class="flex justify-between ">
                     <h1 class="ml-5 mb-5">Dashboard</h1>
                     <div class="w-[7rem] flex-col bg-white  rounded-md shadow-xl">
-                        <div><a href="/alunmoEditProfile">Profile</a></div>
+                        
                         <div><a href="/logout">Logout</a></div>
                     </div>
                 </div>

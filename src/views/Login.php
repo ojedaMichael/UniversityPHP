@@ -18,7 +18,7 @@
                 <input class="border border-gray-300 rounded-md p-1" type="email" name="correo" placeholder="Email">
                 
 
-                <input class="border border-gray-300 rounded-md p-1" type="text" name="contrasena" placeholder="Password">
+                <input class="border border-gray-300 rounded-md p-1" type="password" name="contrasena" placeholder="Password">
                 
 
                 <button class="bg-sky-500 p-1 rounded-sm text-white flex items-end " type="submit">Ingresar</button>

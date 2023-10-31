@@ -31,7 +31,7 @@ $clases = $_SESSION["clases"];
                     
                         <option value='admin'>Admin</option>
                         <option value='alumno'>Alumno</option>
-                        <option value='alumno'>Maestro</option>
+                        <option value='maestro'>Maestro</option>
             
                 </select>
                 </div>

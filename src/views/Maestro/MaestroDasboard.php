@@ -24,7 +24,7 @@ extract($dataPersonales[0]);
             </div>
             <div class=" border-b border-gray-500">
                 <h1 class="text-[#babcc9] m-2 text-lg">Maestro</h1>
-                <h2 class="text-[#babcc9] m-2 text-sm">Nombre de ejemplo</h2>
+                <h2 class="text-[#babcc9] m-2 text-sm"><?=$Nombre?> <?=$Apellido?></h2>
             </div>
             <div class="flex justify-center content-center">
                 <h1 class="text-[#babcc9] text-[10px] font-bold mt-4">MENU MAESTRO</h1>
@@ -41,7 +41,7 @@ extract($dataPersonales[0]);
                     <h2 class="text-slate-400 text-sm font-semibold ml-6">Home</h2>
                 </div>
                 <div>
-                    <h2 class="text-slate-400 text-sm font-semibold mr-3">Nombre de prueba</h2>
+                    <h2 class="text-slate-400 text-sm font-semibold mr-3"><?=$Nombre?> <?=$Apellido?></h2>
                 </div>
             </div>
             <div class="bg-slate-300 h-screen pt-4">
