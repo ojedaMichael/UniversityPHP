@@ -49,7 +49,7 @@ class Alumno{
           $dataPersonales = $_SESSION["user"];
           extract($dataPersonales[0]);
 
-          $res = DB::query("select a.ID_Alumno, c.ID_Clase, c.NombreClase, i.ID_Inscripcion from inscripciones i inner join clases c on i.ID_Clase = c.ID_Clase inner join alumnos a on i.ID_Alumno = a.ID_Alumno inner join usuarios u on a.ID_Usuario = u.ID_Usuario where u.ID_Usuario = '$ID_Usuario';");
+          $res = DB::query("select a.ID_Alumno, c.ID_Clase, c.NombreClase, i.ID_Inscripcion, i.Calificacion from inscripciones i inner join clases c on i.ID_Clase = c.ID_Clase inner join alumnos a on i.ID_Alumno = a.ID_Alumno inner join usuarios u on a.ID_Usuario = u.ID_Usuario where u.ID_Usuario = '$ID_Usuario';");
           $res2 = DB::query("select * from clases ;");
           $dataClases = $res->fetchAll(PDO::FETCH_ASSOC);
           $dataClases2 = $res2->fetchAll(PDO::FETCH_ASSOC);

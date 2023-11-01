@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/Alumno.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/models/Alumno.php");
 
 class AlumnoController{
 

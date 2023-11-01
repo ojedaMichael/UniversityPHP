@@ -1,11 +1,8 @@
 <?php
-
 session_start();
 $dataAlumnos = $_SESSION["claseRead"];
 extract($dataAlumnos[0]);
 $dataPersonales = $_SESSION["user"];
-
-
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +28,7 @@ $dataPersonales = $_SESSION["user"];
                 <h2 class="text-[#babcc9] m-2 text-sm"><?=$dataPersonales[0]["Nombre"]?> <?=$dataPersonales[0]["Apellido"]?></h2>
             </div>
             <div class="flex justify-center content-center">
-                <h1 class="text-[#babcc9] text-[10px] font-bold mt-4">MENU DE MAESTRO</h1>
+                <h1 class="text-[#babcc9] text-[10px] font-bold mt-4">MENUC MAESTRO</h1>
             </div>
             <div class="">
                 <div class="flex justify-center content-center">
@@ -73,6 +70,10 @@ $dataPersonales = $_SESSION["user"];
                                     <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                                         CorreoElectronico
                                     </th>
+                                    <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                        Calificacion
+                                    </th>
+                                    
                                     
                                     
                                     <th class="px-4 py-2"></th>
@@ -90,7 +91,15 @@ $dataPersonales = $_SESSION["user"];
                                         <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?= $Apellido ?></td>
                                         <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?= $CorreoElectronico ?></td>
                                         <td class="whitespace-nowrap px-4 py-2">
-                                            
+                                        <div class="flex">
+                                                <form action="/editCalificacion" method="post">
+                                                    <input hidden type="text" name="id" value="<?=$ID_Inscripcion ?>">
+                                                    <input class="w-8 border border-gray-400 rounded-md text-center" name="calificacion" value="<?= $Calificacion ?>" type="number"> Pts.
+                                                    <button type="submit" class="inline-block rounded w-10 px-4 text-sky-600 hover:text-sky-300 text-center"">
+                                                        <span class="material-symbols-outlined">edit</span>
+                                                    </button>
+                                                </form>
+                                            </div>
                                         </td>
                                     </tr>
                                 <?php

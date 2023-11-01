@@ -1,9 +1,9 @@
 <?php
 
-require_once($_SERVER["DOCUMENT_ROOT"]."/src/controllers/AdminController.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/src/controllers/AlumnoController.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/src/controllers/MaestroController.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/src/controllers/LoginController.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/controllers/AdminController.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/controllers/AlumnoController.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/controllers/MaestroController.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/controllers/LoginController.php");
 
 $controllerAdmin = new AdminController();
 $controllerAlumno = new AlumnoController();
@@ -171,6 +171,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ) {
             $controllerAdmin->EditPermiso($_POST);
             break;
 
+        case "/editCalificacion":
+            $controllerMaestro->EditCalificacion($_POST);
+            break;
+
         case "/alumnoEditProfile":
             $controllerAlumno->AlumnoEditProfile($_POST);
             break;
@@ -195,8 +199,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ) {
             $controllerAdmin->CrearMaestro($_POST);
             break;
 
-        case "/update":
-            $controller->update($_POST);
         default:
             echo "no encontramos la URL";
     }

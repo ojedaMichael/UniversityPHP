@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/Maestro.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/models/Maestro.php");
 
 class MaestroController{
 
@@ -34,6 +34,16 @@ class MaestroController{
         
         header("location: /maestroAlumnosReadView");
     
+    }
+
+    public function EditCalificacion($request) {
+
+        $edited = Maestro::Calificacion($request);
+
+        if ($edited) {
+            header("location: /maestroAlumnosRead");
+        }
+
     }
 
 }

@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/Login.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/models/Login.php");
 
 class LoginController{
 
@@ -44,8 +44,9 @@ class LoginController{
     public function Logout(){
 
         session_start();
+        session_unset();
         session_destroy();
-    header("Location: /index.php");
+        header("Location: /index.php");
     }
 
 }

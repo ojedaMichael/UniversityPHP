@@ -28,6 +28,11 @@ Para este proyecto, debes crear una plataforma con sistema de roles. Existen tre
 
 - Ver y cambiar las clases en las que está registrado.
 
+### EXTRAS
+
+- El alumno puede ver sus calificaciones de cada materia
+- El maestro puede ver y editar las calificaciones de los alumnos asignado a su clase
+
 ## Archivos proporcionados en este repositorio
 
 En este repositorio te hemos dado los siguientes archivos:
