@@ -171,6 +171,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ) {
             $controllerAdmin->EditPermiso($_POST);
             break;
 
+        case "/editCalificacion":
+            $controllerMaestro->EditCalificacion($_POST);
+            break;
+
         case "/alumnoEditProfile":
             $controllerAlumno->AlumnoEditProfile($_POST);
             break;
@@ -195,8 +199,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" ) {
             $controllerAdmin->CrearMaestro($_POST);
             break;
 
-        case "/update":
-            $controller->update($_POST);
         default:
             echo "no encontramos la URL";
     }

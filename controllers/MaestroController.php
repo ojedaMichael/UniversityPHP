@@ -36,4 +36,14 @@ class MaestroController{
     
     }
 
+    public function EditCalificacion($request) {
+
+        $edited = Maestro::Calificacion($request);
+
+        if ($edited) {
+            header("location: /maestroAlumnosRead");
+        }
+
+    }
+
 }

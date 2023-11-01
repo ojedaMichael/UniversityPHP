@@ -65,6 +65,9 @@ $usuarioID = $_SESSION["user"];
                                             Clase
                                         </th>
                                         <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+                                            Calificacion
+                                        </th>
+                                        <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
                                             Darse de baja
                                         </th>
                                         <th class="px-4 py-2"></th>
@@ -79,6 +82,7 @@ $usuarioID = $_SESSION["user"];
                                         <tr>
                                             <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-900"><?= $ID_Clase ?></td>
                                             <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?= $NombreClase ?></td>
+                                            <td class="whitespace-nowrap px-4 py-2 text-gray-700"><?= $Calificacion ?>Pts.</td>
                                             <td class="whitespace-nowrap px-4 py-2">
                                                 <div class="flex">
                                                     <form action="/destroyInscripcion" method="post" >
