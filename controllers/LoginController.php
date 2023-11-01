@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/Login.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/models/Login.php");
 
 class LoginController{
 

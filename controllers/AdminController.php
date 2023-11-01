@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/Admin.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/models/Admin.php");
 
 class AdminController{
     

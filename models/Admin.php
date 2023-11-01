@@ -165,18 +165,40 @@ class Admin{
         $res = DB::query("insert into usuarios(Nombre, Apellido, Password, CorreoElectronico, Rol) values ('$nombre','$apellido', '$hash', '$correo', 'alumno');");
 
         if ($res) {
-            return true;
+            $res2 = DB::query("select ID_Usuario from usuarios where CorreoElectronico = '$correo'");
+            $datares2 = $res2->fetch(PDO::FETCH_ASSOC);
+
+            if ($res2) {
+                $dataID = $datares2["ID_Usuario"];
+
+                $res3 = DB::query("insert into alumnos(ID_Usuario) values('$dataID')");
+
+                if ($res3) {
+                    return true;
+                }
+            }
         }
     }
 
     public static function CreateClass($data) {
 
         $nombre = $data["nombre"];
-
+        $maestro = $data["maestro"];
         $res = DB::query("insert into clases(NombreClase) values ('$nombre');");
 
         if ($res) {
-            return true;
+            $res2 = DB::query("select ID_Clase from clases where NombreClase='$nombre'");
+            $dataID = $res2->fetch(PDO::FETCH_ASSOC);
+
+            if ($res2) {
+                $idclase = $dataID["ID_Clase"];
+
+                $res3 = DB::query("insert into maestro_clase(ID_Clase, ID_Maestro) values('$idclase', '$maestro')");
+
+                if ($res3) {
+                    return true;
+                }
+            }
         }
     }
 

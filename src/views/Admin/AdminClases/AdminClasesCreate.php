@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+$maestros = $_SESSION["clases"];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +21,16 @@
 
                 <input class="border border-gray-300 rounded-md p-1" type="text" name="nombre" placeholder="nombre de la clase" >
                 
-                
+                <div class="flex-col flex">
+                <label>Seleciona un maestro:</label>
+                <select class="border border-gray-300 rounded-md p-1" name="maestro">
+                    <?php 
+                    foreach($maestros as $maestro) {
+                        extract($maestro);?>
+                        <option value="<?=$ID_Maestro?>"><?=$Nombre?></option>
+                    <?php }?>    
+                </select>
+                </div>
                 
                 <button class="bg-sky-500 p-1 rounded-sm text-white flex items-end " type="submit">crear</button>
             </form>

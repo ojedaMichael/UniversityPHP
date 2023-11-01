@@ -26,7 +26,7 @@ $clases = $_SESSION["clases"];
                 <input class="border border-gray-300 rounded-md p-1" type="text" readonly name="correo" value="<?=$permiso[0]["CorreoElectronico"]?>">
 
                 <div class="flex-col flex">
-                <label>Seleciona una clase:</label>
+                <label>Seleciona un permiso:</label>
                 <select class="border border-gray-300 rounded-md p-1" name="rol">
                     
                         <option value='admin'>Admin</option>

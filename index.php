@@ -1,9 +1,9 @@
 <?php
 
-require_once($_SERVER["DOCUMENT_ROOT"]."/src/controllers/AdminController.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/src/controllers/AlumnoController.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/src/controllers/MaestroController.php");
-require_once($_SERVER["DOCUMENT_ROOT"]."/src/controllers/LoginController.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/controllers/AdminController.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/controllers/AlumnoController.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/controllers/MaestroController.php");
+require_once($_SERVER["DOCUMENT_ROOT"]."/controllers/LoginController.php");
 
 $controllerAdmin = new AdminController();
 $controllerAlumno = new AlumnoController();

@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER["DOCUMENT_ROOT"] . "/src/models/Maestro.php");
+require_once($_SERVER["DOCUMENT_ROOT"] . "/models/Maestro.php");
 
 class MaestroController{
 

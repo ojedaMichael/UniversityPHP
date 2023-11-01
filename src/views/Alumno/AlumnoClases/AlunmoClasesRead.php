@@ -25,8 +25,8 @@ $usuarioID = $_SESSION["user"];
                 <h1 class="text-[#babcc9]">universidad</h1>
             </div>
             <div class=" border-b border-gray-500">
-                <h1 class="text-[#babcc9] m-2 text-lg">Admin</h1>
-                <h2 class="text-[#babcc9] m-2 text-sm">Administrador</h2>
+                <h1 class="text-[#babcc9] m-2 text-lg">Alumno</h1>
+                <h2 class="text-[#babcc9] m-2 text-sm">Alumno</h2>
             </div>
             <div class="flex justify-center content-center">
                 <h1 class="text-[#babcc9] text-[10px] font-bold mt-4">MENU ADMINISTRACION</h1>
@@ -39,10 +39,10 @@ $usuarioID = $_SESSION["user"];
         <div class="w-screen bg-[#f5f6fa] shadow-2x1">
             <div class="bg-white h-10 shadow-2x1 flex justify-between items-center ">
                 <div>
-                    <a href="/adminDashboard" class="text-slate-400 text-sm font-semibold ml-6">Home</a>
+                    <a href="/alumnoDashboard" class="text-slate-400 text-sm font-semibold ml-6">Home</a>
                 </div>
                 <div>
-                    <h2 class="text-slate-400 text-sm font-semibold mr-3">Administrador</h2>
+                    <h2 class="text-slate-400 text-sm font-semibold mr-3">alumno</h2>
                 </div>
             </div>
             <div class="bg-slate-300 h-screen pt-4">
