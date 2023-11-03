@@ -122,7 +122,7 @@ class AdminController{
         $created = Admin::CreateTeacher($request);
 
         if ($created) {
-            header("location: /adminClasesRead");
+            header("location: /adminMaestrosRead");
         }
     }
 
